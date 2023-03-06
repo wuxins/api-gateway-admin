@@ -101,8 +101,10 @@ public class ApiVersionServiceImpl implements ApiVersionService {
                     serviceCodeWithName.put(upstreamService.getServiceCode(), upstreamService.getName());
                 }
                 UpstreamServiceVersion upstreamServiceVersion = upstreamServiceVersionRepository.findByServiceCodeAndEnv(item.getServiceCode(), item.getEnv());
-                item.setServiceName(serviceCodeWithName.get(item.getServiceCode()));
-                item.setServiceAddress(upstreamServiceVersion.getAddress());
+                if (upstreamServiceVersion != null) {
+                    item.setServiceName(serviceCodeWithName.get(item.getServiceCode()));
+                    item.setServiceAddress(upstreamServiceVersion.getAddress());
+                }
             } else {
                 item.setEnv(i.getEnv());
                 item.setEnvName(i.getName());

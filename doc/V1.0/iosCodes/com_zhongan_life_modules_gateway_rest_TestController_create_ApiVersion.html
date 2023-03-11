@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ApiVersion</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.css">
+<link href="../style.css" rel="stylesheet" />
+</head>
+<body onload="PR.prettyPrint()">
+<pre class="prettyprint">
+<xmp>
+#import <Foundation/Foundation>;
+
+@interface ApiVersion : NSObject
+
+//
+@property (nonatomic, strong) long id;
+//
+@property (nonatomic, assign) NSString apiCode;
+//
+@property (nonatomic, assign) NSString method;
+//
+@property (nonatomic, assign) NSString srcUrl;
+//
+@property (nonatomic, assign) NSString desUrl;
+//
+@property (nonatomic, assign) NSString serviceCode;
+//
+@property (nonatomic, assign) NSString env;
+//
+@property (nonatomic, assign) NSString needRateLimit;
+//
+@property (nonatomic, strong) NSInteger rateLimit;
+//
+@property (nonatomic, assign) NSString needFallback;
+//
+@property (nonatomic, assign) NSString fallback;
+//
+@property (nonatomic, assign) NSString needMonitor;
+//
+@property (nonatomic, strong) NSInteger readTimeout;
+//
+@property (nonatomic, assign) NSString ignoreHeaderParams;
+//
+@property (nonatomic, assign) NSString ignoreQueryParams;
+//
+@property (nonatomic, strong) Object gmtCreated;
+//
+@property (nonatomic, strong) Object gmtModified;
+//
+@property (nonatomic, assign) NSString creator;
+//
+@property (nonatomic, assign) NSString modifier;
+//
+@property (nonatomic, assign) NSString isDeleted;
+//
+@property (nonatomic, assign) NSString name;
+//
+@property (nonatomic, assign) NSString maintainer;
+//
+@property (nonatomic, assign) NSString description;
+//
+@property (nonatomic, assign) NSString envName;
+//
+@property (nonatomic, assign) NSString serviceName;
+//
+@property (nonatomic, assign) NSString serviceAddress;
+
+
+@end
+</xmp>
+</pre>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.js"></script>
+</body>
+</html>

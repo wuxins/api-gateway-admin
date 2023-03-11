@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration debug="false">
+    <!--添加配置文件-->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+    <!--获取 spring 配置中的 key 为 spring.application.name 的 value 值-->
+    <springProperty scope="context" name="applicationName" source="spring.application.name"/>
+    <property name="LOG_HOME" value="${LOG_PATH:-.}"/>
+    <property name="CONSOLE_LOG_PATTERN"
+              value="%d %-5p [%thread %X{traceId}] [%C:%L] - %m%n"/>
+    <property name="FILE_LOG_PATTERN" value="%d %-5p [%thread %X{traceId}] [%C:%L] - %m%n"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+    <appender name="DAY_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/run.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>run.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>50MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <!--<filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>             &lt;!&ndash; 设置拦截的对象为INFO级别日志 &ndash;&gt;
+            <onMatch>ACCEPT</onMatch>       &lt;!&ndash; 当遇到了INFO级别时，启用改段配置 &ndash;&gt;
+            <onMismatch>DENY</onMismatch>   &lt;!&ndash; 没有遇到INFO级别日志时，屏蔽改段配置 &ndash;&gt;
+        </filter>-->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>50MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+
+    <appender name="DAY_ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>50MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>            <!-- 设置拦截的对象为ERROR级别日志 -->
+            <onMatch>ACCEPT</onMatch>       <!-- 当遇到了ERROR级别时，启用改段配置 -->
+            <onMismatch>DENY</onMismatch>   <!-- 没有遇到ERROR级别日志时，屏蔽改段配置 -->
+        </filter>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    <springProfile name="local">
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="DAY_FILE"/>
+            <appender-ref ref="DAY_ERROR_FILE"/>
+        </root>
+    </springProfile>
+    <springProfile name="dev">
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="DAY_FILE"/>
+            <appender-ref ref="DAY_ERROR_FILE"/>
+        </root>
+    </springProfile>
+    <springProfile name="sit">
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="DAY_FILE"/>
+            <appender-ref ref="DAY_ERROR_FILE"/>
+        </root>
+    </springProfile>
+    <springProfile name="uat">
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="DAY_FILE"/>
+            <appender-ref ref="DAY_ERROR_FILE"/>
+        </root>
+    </springProfile>
+    <springProfile name="prd">
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="DAY_FILE"/>
+            <appender-ref ref="DAY_ERROR_FILE"/>
+        </root>
+    </springProfile>
+</configuration>

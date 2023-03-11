@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DictController</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="PR.prettyPrint()">
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">
+                api gateway admin
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://github.com/YeDaxia/JApiDocs" target="_blank">GitHub</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">V1.0<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="book with-summary">
+    <div class="book-summary">
+<div class="search-box form-group">
+    <input type="text" class="form-control" id="inputSearch" placeholder="搜索接口">
+    <span class="glyphicon glyphicon-search form-control-feedback" aria-hidden="true"></span>
+</div>
+<div id="accordion" class="catalog">
+        <div class="panel">
+            <div id="heading0" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse0" aria-controls="collapse0">
+                <i class="glyphicon glyphicon-align-justify"></i> AliPayController
+            </div>
+            <div id="collapse0" class="collapse in " aria-labelledby="heading0">
+                    <a class="catalog-item" href="com_zhongan_life_modules_tools_rest_AliPayController.html#queryAliConfig">
+                        queryAliConfig
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_tools_rest_AliPayController.html#updateAliPayConfig">
+                        updateAliPayConfig
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_tools_rest_AliPayController.html#toPayAsPc">
+                        toPayAsPc
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_tools_rest_AliPayController.html#toPayAsWeb">
+                        toPayAsWeb
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_tools_rest_AliPayController.html#notify">
+                        notify
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading1" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse1" aria-controls="collapse1">
+                <i class="glyphicon glyphicon-align-justify"></i> 发送邮件
+            </div>
+            <div id="collapse1" class="collapse " aria-labelledby="heading1">
+                    <a class="catalog-item" href="com_zhongan_life_modules_tools_rest_EmailController.html#queryEmailConfig">
+                        queryEmailConfig
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_tools_rest_EmailController.html#updateEmailConfig">
+                        updateEmailConfig
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_tools_rest_EmailController.html#sendEmail">
+                        sendEmail
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading2" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse2" aria-controls="collapse2">
+                <i class="glyphicon glyphicon-align-justify"></i> AuthorizationController
+            </div>
+            <div id="collapse2" class="collapse " aria-labelledby="heading2">
+                    <a class="catalog-item" href="com_zhongan_life_modules_security_rest_AuthorizationController.html#getUserInfo">
+                        getUserInfo
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading3" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse3" aria-controls="collapse3">
+                <i class="glyphicon glyphicon-align-justify"></i> OnlineController
+            </div>
+            <div id="collapse3" class="collapse " aria-labelledby="heading3">
+                    <a class="catalog-item" href="com_zhongan_life_modules_security_rest_OnlineController.html#queryOnlineUser">
+                        queryOnlineUser
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_security_rest_OnlineController.html#exportOnlineUser">
+                        exportOnlineUser
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_security_rest_OnlineController.html#deleteOnlineUser">
+                        deleteOnlineUser
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading4" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse4" aria-controls="collapse4">
+                <i class="glyphicon glyphicon-align-justify"></i> GeneratorController
+            </div>
+            <div id="collapse4" class="collapse " aria-labelledby="heading4">
+                    <a class="catalog-item" href="com_zhongan_life_modules_generator_rest_GeneratorController.html#queryAllTables">
+                        queryAllTables
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_generator_rest_GeneratorController.html#queryTables">
+                        queryTables
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_generator_rest_GeneratorController.html#queryColumns">
+                        queryColumns
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_generator_rest_GeneratorController.html#saveColumn">
+                        saveColumn
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_generator_rest_GeneratorController.html#syncColumn">
+                        syncColumn
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_generator_rest_GeneratorController.html#generatorCode">
+                        generatorCode
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading5" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse5" aria-controls="collapse5">
+                <i class="glyphicon glyphicon-align-justify"></i> GenConfigController
+            </div>
+            <div id="collapse5" class="collapse " aria-labelledby="heading5">
+                    <a class="catalog-item" href="com_zhongan_life_modules_generator_rest_GenConfigController.html#queryGenConfig">
+                        queryGenConfig
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_generator_rest_GenConfigController.html#updateGenConfig">
+                        updateGenConfig
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading6" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse6" aria-controls="collapse6">
+                <i class="glyphicon glyphicon-align-justify"></i> VerifyController
+            </div>
+            <div id="collapse6" class="collapse " aria-labelledby="heading6">
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_VerifyController.html#resetEmail">
+                        resetEmail
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_VerifyController.html#resetPass">
+                        resetPass
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_VerifyController.html#validated">
+                        validated
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading7" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse7" aria-controls="collapse7">
+                <i class="glyphicon glyphicon-align-justify"></i> MonitorController
+            </div>
+            <div id="collapse7" class="collapse " aria-labelledby="heading7">
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_MonitorController.html#queryMonitor">
+                        queryMonitor
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading8" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse8" aria-controls="collapse8">
+                <i class="glyphicon glyphicon-align-justify"></i> DictController
+            </div>
+            <div id="collapse8" class="collapse in " aria-labelledby="heading8">
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DictController.html#exportDict">
+                        exportDict
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DictController.html#queryAllDict">
+                        queryAllDict
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DictController.html#queryDict">
+                        queryDict
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DictController.html#createDict">
+                        createDict
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DictController.html#updateDict">
+                        updateDict
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DictController.html#deleteDict">
+                        deleteDict
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading9" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse9" aria-controls="collapse9">
+                <i class="glyphicon glyphicon-align-justify"></i> JobController
+            </div>
+            <div id="collapse9" class="collapse " aria-labelledby="heading9">
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_JobController.html#exportJob">
+                        exportJob
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_JobController.html#queryJob">
+                        queryJob
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_JobController.html#createJob">
+                        createJob
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_JobController.html#updateJob">
+                        updateJob
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_JobController.html#deleteJob">
+                        deleteJob
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading10" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse10" aria-controls="collapse10">
+                <i class="glyphicon glyphicon-align-justify"></i> MenuController
+            </div>
+            <div id="collapse10" class="collapse " aria-labelledby="heading10">
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_MenuController.html#exportMenu">
+                        exportMenu
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_MenuController.html#buildMenus">
+                        buildMenus
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_MenuController.html#queryAllMenu">
+                        queryAllMenu
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_MenuController.html#childMenu">
+                        childMenu
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_MenuController.html#queryMenu">
+                        queryMenu
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_MenuController.html#getMenuSuperior">
+                        getMenuSuperior
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_MenuController.html#createMenu">
+                        createMenu
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_MenuController.html#updateMenu">
+                        updateMenu
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_MenuController.html#deleteMenu">
+                        deleteMenu
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading11" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse11" aria-controls="collapse11">
+                <i class="glyphicon glyphicon-align-justify"></i> RoleController
+            </div>
+            <div id="collapse11" class="collapse " aria-labelledby="heading11">
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_RoleController.html#findRoleById">
+                        findRoleById
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_RoleController.html#exportRole">
+                        exportRole
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_RoleController.html#queryAllRole">
+                        queryAllRole
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_RoleController.html#queryRole">
+                        queryRole
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_RoleController.html#getRoleLevel">
+                        getRoleLevel
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_RoleController.html#createRole">
+                        createRole
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_RoleController.html#updateRole">
+                        updateRole
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_RoleController.html#updateRoleMenu">
+                        updateRoleMenu
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_RoleController.html#deleteRole">
+                        deleteRole
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading12" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse12" aria-controls="collapse12">
+                <i class="glyphicon glyphicon-align-justify"></i> DictDetailController
+            </div>
+            <div id="collapse12" class="collapse " aria-labelledby="heading12">
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DictDetailController.html#queryDictDetail">
+                        queryDictDetail
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DictDetailController.html#getDictDetailMaps">
+                        getDictDetailMaps
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DictDetailController.html#createDictDetail">
+                        createDictDetail
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DictDetailController.html#updateDictDetail">
+                        updateDictDetail
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DictDetailController.html#deleteDictDetail">
+                        deleteDictDetail
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading13" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse13" aria-controls="collapse13">
+                <i class="glyphicon glyphicon-align-justify"></i> DeptController
+            </div>
+            <div id="collapse13" class="collapse " aria-labelledby="heading13">
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DeptController.html#exportDept">
+                        exportDept
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DeptController.html#queryDept">
+                        queryDept
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DeptController.html#getDeptSuperior">
+                        getDeptSuperior
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DeptController.html#createDept">
+                        createDept
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DeptController.html#updateDept">
+                        updateDept
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_DeptController.html#deleteDept">
+                        deleteDept
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading14" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse14" aria-controls="collapse14">
+                <i class="glyphicon glyphicon-align-justify"></i> UserController
+            </div>
+            <div id="collapse14" class="collapse " aria-labelledby="heading14">
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_UserController.html#exportUser">
+                        exportUser
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_UserController.html#queryUser">
+                        queryUser
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_UserController.html#createUser">
+                        createUser
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_UserController.html#updateUser">
+                        updateUser
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_UserController.html#centerUser">
+                        centerUser
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_UserController.html#deleteUser">
+                        deleteUser
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_UserController.html#updateUserPass">
+                        updateUserPass
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_UserController.html#updateUserAvatar">
+                        updateUserAvatar
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_system_rest_UserController.html#updateUserEmail">
+                        updateUserEmail
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading15" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse15" aria-controls="collapse15">
+                <i class="glyphicon glyphicon-align-justify"></i> UpstreamServiceController
+            </div>
+            <div id="collapse15" class="collapse " aria-labelledby="heading15">
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_UpstreamServiceController.html#exportUpstreamService">
+                        exportUpstreamService
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_UpstreamServiceController.html#queryUpstreamService">
+                        queryUpstreamService
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_UpstreamServiceController.html#queryUpstreamServiceAll">
+                        queryUpstreamServiceAll
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_UpstreamServiceController.html#createUpstreamService">
+                        createUpstreamService
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_UpstreamServiceController.html#updateUpstreamService">
+                        updateUpstreamService
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_UpstreamServiceController.html#deleteUpstreamService">
+                        deleteUpstreamService
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading16" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse16" aria-controls="collapse16">
+                <i class="glyphicon glyphicon-align-justify"></i> EnvironmentController
+            </div>
+            <div id="collapse16" class="collapse " aria-labelledby="heading16">
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_EnvironmentController.html#exportEnvironment">
+                        exportEnvironment
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_EnvironmentController.html#queryEnvironment">
+                        queryEnvironment
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_EnvironmentController.html#queryEnvironment">
+                        queryEnvironment
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_EnvironmentController.html#createEnvironment">
+                        createEnvironment
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_EnvironmentController.html#updateEnvironment">
+                        updateEnvironment
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_EnvironmentController.html#deleteEnvironment">
+                        deleteEnvironment
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading17" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse17" aria-controls="collapse17">
+                <i class="glyphicon glyphicon-align-justify"></i> ApiVersionController
+            </div>
+            <div id="collapse17" class="collapse " aria-labelledby="heading17">
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_ApiVersionController.html#exportApiVersion">
+                        exportApiVersion
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_ApiVersionController.html#queryApiVersion">
+                        queryApiVersion
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_ApiVersionController.html#queryApi">
+                        queryApi
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_ApiVersionController.html#createApiVersion">
+                        createApiVersion
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_ApiVersionController.html#updateApiVersion">
+                        updateApiVersion
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_ApiVersionController.html#syncApiVersion">
+                        syncApiVersion
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_ApiVersionController.html#deleteApiVersion">
+                        deleteApiVersion
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading18" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse18" aria-controls="collapse18">
+                <i class="glyphicon glyphicon-align-justify"></i> 这是一个测试Controller
+            </div>
+            <div id="collapse18" class="collapse " aria-labelledby="heading18">
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_TestController.html#create">
+                        创建资源
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_TestController.html#query">
+                        查询资源
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading19" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse19" aria-controls="collapse19">
+                <i class="glyphicon glyphicon-align-justify"></i> GroupController
+            </div>
+            <div id="collapse19" class="collapse " aria-labelledby="heading19">
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_GroupController.html#exportGroup">
+                        exportGroup
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_GroupController.html#queryGroup">
+                        queryGroup
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_GroupController.html#createGroup">
+                        createGroup
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_GroupController.html#updateGroup">
+                        updateGroup
+                    </a>
+                    <a class="catalog-item" href="com_zhongan_life_modules_gateway_rest_GroupController.html#deleteGroup">
+                        deleteGroup
+                    </a>
+            </div>
+        </div>
+</div>    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+                <div class="d-flex justify-content-between">
+                    <a class="header-menu toggle-catalog" href="javascript:void(0)"><i
+                            class="glyphicon glyphicon-align-justify"></i> 目录</a>
+                </div>
+            </div>
+            <div class="page-wrapper">
+                <div class="page-inner">
+                    <div class="action-list">
+                        <div class="action-item">
+<h2 id="exportDict"><a href="#">exportDict </a></h2>
+    <p class="text-muted"><em>作者: Zheng Jie</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/api/dict/download</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{}</pre>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="queryAllDict"><a href="#">queryAllDict </a></h2>
+    <p class="text-muted"><em>作者: Zheng Jie</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/api/dict/all</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">object{}</pre>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="queryDict"><a href="#">queryDict </a></h2>
+    <p class="text-muted"><em>作者: Zheng Jie</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/api/dict/queryDict</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">object{}</pre>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="createDict"><a href="#">createDict </a></h2>
+    <p class="text-muted"><em>作者: Zheng Jie</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/api/dict/createDict</code>
+        <span class="label label-default">POST</span>
+</p>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">object{}</pre>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="updateDict"><a href="#">updateDict </a></h2>
+    <p class="text-muted"><em>作者: Zheng Jie</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/api/dict/updateDict</code>
+        <span class="label label-default">PUT</span>
+</p>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">object{}</pre>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="deleteDict"><a href="#">deleteDict </a></h2>
+    <p class="text-muted"><em>作者: Zheng Jie</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/api/dict/deleteDict</code>
+        <span class="label label-default">DELETE</span>
+</p>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">object{}</pre>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.js"></script>
+<script>
+
+    var search_source_data = [
+            {name: 'AliPayController.queryAliConfig', url: 'com_zhongan_life_modules_tools_rest_AliPayController.html#queryAliConfig'},
+            {name: 'AliPayController.updateAliPayConfig', url: 'com_zhongan_life_modules_tools_rest_AliPayController.html#updateAliPayConfig'},
+            {name: 'AliPayController.toPayAsPc', url: 'com_zhongan_life_modules_tools_rest_AliPayController.html#toPayAsPc'},
+            {name: 'AliPayController.toPayAsWeb', url: 'com_zhongan_life_modules_tools_rest_AliPayController.html#toPayAsWeb'},
+            {name: 'AliPayController.notify', url: 'com_zhongan_life_modules_tools_rest_AliPayController.html#notify'},
+            {name: '发送邮件.queryEmailConfig', url: 'com_zhongan_life_modules_tools_rest_EmailController.html#queryEmailConfig'},
+            {name: '发送邮件.updateEmailConfig', url: 'com_zhongan_life_modules_tools_rest_EmailController.html#updateEmailConfig'},
+            {name: '发送邮件.sendEmail', url: 'com_zhongan_life_modules_tools_rest_EmailController.html#sendEmail'},
+            {name: 'AuthorizationController.getUserInfo', url: 'com_zhongan_life_modules_security_rest_AuthorizationController.html#getUserInfo'},
+            {name: 'OnlineController.queryOnlineUser', url: 'com_zhongan_life_modules_security_rest_OnlineController.html#queryOnlineUser'},
+            {name: 'OnlineController.exportOnlineUser', url: 'com_zhongan_life_modules_security_rest_OnlineController.html#exportOnlineUser'},
+            {name: 'OnlineController.deleteOnlineUser', url: 'com_zhongan_life_modules_security_rest_OnlineController.html#deleteOnlineUser'},
+            {name: 'GeneratorController.queryAllTables', url: 'com_zhongan_life_modules_generator_rest_GeneratorController.html#queryAllTables'},
+            {name: 'GeneratorController.queryTables', url: 'com_zhongan_life_modules_generator_rest_GeneratorController.html#queryTables'},
+            {name: 'GeneratorController.queryColumns', url: 'com_zhongan_life_modules_generator_rest_GeneratorController.html#queryColumns'},
+            {name: 'GeneratorController.saveColumn', url: 'com_zhongan_life_modules_generator_rest_GeneratorController.html#saveColumn'},
+            {name: 'GeneratorController.syncColumn', url: 'com_zhongan_life_modules_generator_rest_GeneratorController.html#syncColumn'},
+            {name: 'GeneratorController.generatorCode', url: 'com_zhongan_life_modules_generator_rest_GeneratorController.html#generatorCode'},
+            {name: 'GenConfigController.queryGenConfig', url: 'com_zhongan_life_modules_generator_rest_GenConfigController.html#queryGenConfig'},
+            {name: 'GenConfigController.updateGenConfig', url: 'com_zhongan_life_modules_generator_rest_GenConfigController.html#updateGenConfig'},
+            {name: 'VerifyController.resetEmail', url: 'com_zhongan_life_modules_system_rest_VerifyController.html#resetEmail'},
+            {name: 'VerifyController.resetPass', url: 'com_zhongan_life_modules_system_rest_VerifyController.html#resetPass'},
+            {name: 'VerifyController.validated', url: 'com_zhongan_life_modules_system_rest_VerifyController.html#validated'},
+            {name: 'MonitorController.queryMonitor', url: 'com_zhongan_life_modules_system_rest_MonitorController.html#queryMonitor'},
+            {name: 'DictController.exportDict', url: 'com_zhongan_life_modules_system_rest_DictController.html#exportDict'},
+            {name: 'DictController.queryAllDict', url: 'com_zhongan_life_modules_system_rest_DictController.html#queryAllDict'},
+            {name: 'DictController.queryDict', url: 'com_zhongan_life_modules_system_rest_DictController.html#queryDict'},
+            {name: 'DictController.createDict', url: 'com_zhongan_life_modules_system_rest_DictController.html#createDict'},
+            {name: 'DictController.updateDict', url: 'com_zhongan_life_modules_system_rest_DictController.html#updateDict'},
+            {name: 'DictController.deleteDict', url: 'com_zhongan_life_modules_system_rest_DictController.html#deleteDict'},
+            {name: 'JobController.exportJob', url: 'com_zhongan_life_modules_system_rest_JobController.html#exportJob'},
+            {name: 'JobController.queryJob', url: 'com_zhongan_life_modules_system_rest_JobController.html#queryJob'},
+            {name: 'JobController.createJob', url: 'com_zhongan_life_modules_system_rest_JobController.html#createJob'},
+            {name: 'JobController.updateJob', url: 'com_zhongan_life_modules_system_rest_JobController.html#updateJob'},
+            {name: 'JobController.deleteJob', url: 'com_zhongan_life_modules_system_rest_JobController.html#deleteJob'},
+            {name: 'MenuController.exportMenu', url: 'com_zhongan_life_modules_system_rest_MenuController.html#exportMenu'},
+            {name: 'MenuController.buildMenus', url: 'com_zhongan_life_modules_system_rest_MenuController.html#buildMenus'},
+            {name: 'MenuController.queryAllMenu', url: 'com_zhongan_life_modules_system_rest_MenuController.html#queryAllMenu'},
+            {name: 'MenuController.childMenu', url: 'com_zhongan_life_modules_system_rest_MenuController.html#childMenu'},
+            {name: 'MenuController.queryMenu', url: 'com_zhongan_life_modules_system_rest_MenuController.html#queryMenu'},
+            {name: 'MenuController.getMenuSuperior', url: 'com_zhongan_life_modules_system_rest_MenuController.html#getMenuSuperior'},
+            {name: 'MenuController.createMenu', url: 'com_zhongan_life_modules_system_rest_MenuController.html#createMenu'},
+            {name: 'MenuController.updateMenu', url: 'com_zhongan_life_modules_system_rest_MenuController.html#updateMenu'},
+            {name: 'MenuController.deleteMenu', url: 'com_zhongan_life_modules_system_rest_MenuController.html#deleteMenu'},
+            {name: 'RoleController.findRoleById', url: 'com_zhongan_life_modules_system_rest_RoleController.html#findRoleById'},
+            {name: 'RoleController.exportRole', url: 'com_zhongan_life_modules_system_rest_RoleController.html#exportRole'},
+            {name: 'RoleController.queryAllRole', url: 'com_zhongan_life_modules_system_rest_RoleController.html#queryAllRole'},
+            {name: 'RoleController.queryRole', url: 'com_zhongan_life_modules_system_rest_RoleController.html#queryRole'},
+            {name: 'RoleController.getRoleLevel', url: 'com_zhongan_life_modules_system_rest_RoleController.html#getRoleLevel'},
+            {name: 'RoleController.createRole', url: 'com_zhongan_life_modules_system_rest_RoleController.html#createRole'},
+            {name: 'RoleController.updateRole', url: 'com_zhongan_life_modules_system_rest_RoleController.html#updateRole'},
+            {name: 'RoleController.updateRoleMenu', url: 'com_zhongan_life_modules_system_rest_RoleController.html#updateRoleMenu'},
+            {name: 'RoleController.deleteRole', url: 'com_zhongan_life_modules_system_rest_RoleController.html#deleteRole'},
+            {name: 'DictDetailController.queryDictDetail', url: 'com_zhongan_life_modules_system_rest_DictDetailController.html#queryDictDetail'},
+            {name: 'DictDetailController.getDictDetailMaps', url: 'com_zhongan_life_modules_system_rest_DictDetailController.html#getDictDetailMaps'},
+            {name: 'DictDetailController.createDictDetail', url: 'com_zhongan_life_modules_system_rest_DictDetailController.html#createDictDetail'},
+            {name: 'DictDetailController.updateDictDetail', url: 'com_zhongan_life_modules_system_rest_DictDetailController.html#updateDictDetail'},
+            {name: 'DictDetailController.deleteDictDetail', url: 'com_zhongan_life_modules_system_rest_DictDetailController.html#deleteDictDetail'},
+            {name: 'DeptController.exportDept', url: 'com_zhongan_life_modules_system_rest_DeptController.html#exportDept'},
+            {name: 'DeptController.queryDept', url: 'com_zhongan_life_modules_system_rest_DeptController.html#queryDept'},
+            {name: 'DeptController.getDeptSuperior', url: 'com_zhongan_life_modules_system_rest_DeptController.html#getDeptSuperior'},
+            {name: 'DeptController.createDept', url: 'com_zhongan_life_modules_system_rest_DeptController.html#createDept'},
+            {name: 'DeptController.updateDept', url: 'com_zhongan_life_modules_system_rest_DeptController.html#updateDept'},
+            {name: 'DeptController.deleteDept', url: 'com_zhongan_life_modules_system_rest_DeptController.html#deleteDept'},
+            {name: 'UserController.exportUser', url: 'com_zhongan_life_modules_system_rest_UserController.html#exportUser'},
+            {name: 'UserController.queryUser', url: 'com_zhongan_life_modules_system_rest_UserController.html#queryUser'},
+            {name: 'UserController.createUser', url: 'com_zhongan_life_modules_system_rest_UserController.html#createUser'},
+            {name: 'UserController.updateUser', url: 'com_zhongan_life_modules_system_rest_UserController.html#updateUser'},
+            {name: 'UserController.centerUser', url: 'com_zhongan_life_modules_system_rest_UserController.html#centerUser'},
+            {name: 'UserController.deleteUser', url: 'com_zhongan_life_modules_system_rest_UserController.html#deleteUser'},
+            {name: 'UserController.updateUserPass', url: 'com_zhongan_life_modules_system_rest_UserController.html#updateUserPass'},
+            {name: 'UserController.updateUserAvatar', url: 'com_zhongan_life_modules_system_rest_UserController.html#updateUserAvatar'},
+            {name: 'UserController.updateUserEmail', url: 'com_zhongan_life_modules_system_rest_UserController.html#updateUserEmail'},
+            {name: 'UpstreamServiceController.exportUpstreamService', url: 'com_zhongan_life_modules_gateway_rest_UpstreamServiceController.html#exportUpstreamService'},
+            {name: 'UpstreamServiceController.queryUpstreamService', url: 'com_zhongan_life_modules_gateway_rest_UpstreamServiceController.html#queryUpstreamService'},
+            {name: 'UpstreamServiceController.queryUpstreamServiceAll', url: 'com_zhongan_life_modules_gateway_rest_UpstreamServiceController.html#queryUpstreamServiceAll'},
+            {name: 'UpstreamServiceController.createUpstreamService', url: 'com_zhongan_life_modules_gateway_rest_UpstreamServiceController.html#createUpstreamService'},
+            {name: 'UpstreamServiceController.updateUpstreamService', url: 'com_zhongan_life_modules_gateway_rest_UpstreamServiceController.html#updateUpstreamService'},
+            {name: 'UpstreamServiceController.deleteUpstreamService', url: 'com_zhongan_life_modules_gateway_rest_UpstreamServiceController.html#deleteUpstreamService'},
+            {name: 'EnvironmentController.exportEnvironment', url: 'com_zhongan_life_modules_gateway_rest_EnvironmentController.html#exportEnvironment'},
+            {name: 'EnvironmentController.queryEnvironment', url: 'com_zhongan_life_modules_gateway_rest_EnvironmentController.html#queryEnvironment'},
+            {name: 'EnvironmentController.queryEnvironment', url: 'com_zhongan_life_modules_gateway_rest_EnvironmentController.html#queryEnvironment'},
+            {name: 'EnvironmentController.createEnvironment', url: 'com_zhongan_life_modules_gateway_rest_EnvironmentController.html#createEnvironment'},
+            {name: 'EnvironmentController.updateEnvironment', url: 'com_zhongan_life_modules_gateway_rest_EnvironmentController.html#updateEnvironment'},
+            {name: 'EnvironmentController.deleteEnvironment', url: 'com_zhongan_life_modules_gateway_rest_EnvironmentController.html#deleteEnvironment'},
+            {name: 'ApiVersionController.exportApiVersion', url: 'com_zhongan_life_modules_gateway_rest_ApiVersionController.html#exportApiVersion'},
+            {name: 'ApiVersionController.queryApiVersion', url: 'com_zhongan_life_modules_gateway_rest_ApiVersionController.html#queryApiVersion'},
+            {name: 'ApiVersionController.queryApi', url: 'com_zhongan_life_modules_gateway_rest_ApiVersionController.html#queryApi'},
+            {name: 'ApiVersionController.createApiVersion', url: 'com_zhongan_life_modules_gateway_rest_ApiVersionController.html#createApiVersion'},
+            {name: 'ApiVersionController.updateApiVersion', url: 'com_zhongan_life_modules_gateway_rest_ApiVersionController.html#updateApiVersion'},
+            {name: 'ApiVersionController.syncApiVersion', url: 'com_zhongan_life_modules_gateway_rest_ApiVersionController.html#syncApiVersion'},
+            {name: 'ApiVersionController.deleteApiVersion', url: 'com_zhongan_life_modules_gateway_rest_ApiVersionController.html#deleteApiVersion'},
+            {name: '这是一个测试Controller.创建资源', url: 'com_zhongan_life_modules_gateway_rest_TestController.html#create'},
+            {name: '这是一个测试Controller.查询资源', url: 'com_zhongan_life_modules_gateway_rest_TestController.html#query'},
+            {name: 'GroupController.exportGroup', url: 'com_zhongan_life_modules_gateway_rest_GroupController.html#exportGroup'},
+            {name: 'GroupController.queryGroup', url: 'com_zhongan_life_modules_gateway_rest_GroupController.html#queryGroup'},
+            {name: 'GroupController.createGroup', url: 'com_zhongan_life_modules_gateway_rest_GroupController.html#createGroup'},
+            {name: 'GroupController.updateGroup', url: 'com_zhongan_life_modules_gateway_rest_GroupController.html#updateGroup'},
+            {name: 'GroupController.deleteGroup', url: 'com_zhongan_life_modules_gateway_rest_GroupController.html#deleteGroup'},
+    ];
+
+
+
+    $('.toggle-catalog').click(function () {
+        $('.book').toggleClass('with-summary');
+    });
+
+    $('#inputSearch').autocomplete({hint: false}, [
+        {
+            source: function (query, callback) {
+                var result = [];
+                for(var i = 0; i !== search_source_data.length; i++){
+                    if(search_source_data[i].name.indexOf(query) !== -1){
+                        result.push(search_source_data[i]);
+                    }
+                }
+                callback(result);
+            },
+            displayKey: 'name',
+            templates: {
+                suggestion: function (suggestion) {
+                    return suggestion.name;
+                }
+            }
+        }
+    ]).on('autocomplete:selected', function (event, suggestion, dataset, context) {
+        self.location = suggestion.url;
+    });
+</script>
+</body>
+</html>

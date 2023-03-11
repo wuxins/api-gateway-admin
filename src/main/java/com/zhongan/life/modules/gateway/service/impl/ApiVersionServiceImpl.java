@@ -18,7 +18,11 @@ package com.zhongan.life.modules.gateway.service.impl;
 import cn.hutool.core.lang.generator.SnowflakeGenerator;
 import com.zhongan.life.modules.gateway.domain.*;
 import com.zhongan.life.modules.gateway.repository.*;
+import com.zhongan.life.modules.gateway.service.ApiVersionService;
 import com.zhongan.life.modules.gateway.service.dto.ApiDto;
+import com.zhongan.life.modules.gateway.service.dto.ApiSyncDto;
+import com.zhongan.life.modules.gateway.service.dto.ApiVersionDto;
+import com.zhongan.life.modules.gateway.service.dto.ApiVersionQueryCriteria;
 import com.zhongan.life.modules.gateway.service.mapstruct.ApiMapper;
 import com.zhongan.life.modules.gateway.service.mapstruct.ApiVersionMapper;
 import com.zhongan.life.utils.FileUtil;
@@ -26,20 +30,18 @@ import com.zhongan.life.utils.PageUtil;
 import com.zhongan.life.utils.QueryHelp;
 import com.zhongan.life.utils.ValidationUtil;
 import lombok.RequiredArgsConstructor;
-import com.zhongan.life.modules.gateway.service.ApiVersionService;
-import com.zhongan.life.modules.gateway.service.dto.ApiVersionDto;
-import com.zhongan.life.modules.gateway.service.dto.ApiVersionQueryCriteria;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Example;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
-import java.util.*;
-import java.io.IOException;
-import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author yicai.liu
@@ -83,6 +85,14 @@ public class ApiVersionServiceImpl implements ApiVersionService {
     }
 
     @Override
+    @Transactional
+    public ApiVersionDto findById(Long id) {
+        ApiVersion apiVersion = apiVersionRepository.findById(id).orElseGet(ApiVersion::new);
+        ValidationUtil.isNull(apiVersion.getId(), "ApiVersion", "id", id);
+        return apiVersionMapper.toDto(apiVersion);
+    }
+
+    @Override
     public ApiDto findByApiCode(String apiCode) {
 
         List<Environment> envs = environmentRepository.findAll();
@@ -113,14 +123,6 @@ public class ApiVersionServiceImpl implements ApiVersionService {
         });
         api.setApiVersions(itemList);
         return apiMapper.toDto(api);
-    }
-
-    @Override
-    @Transactional
-    public ApiVersionDto findById(Long id) {
-        ApiVersion apiVersion = apiVersionRepository.findById(id).orElseGet(ApiVersion::new);
-        ValidationUtil.isNull(apiVersion.getId(), "ApiVersion", "id", id);
-        return apiVersionMapper.toDto(apiVersion);
     }
 
     @Override
@@ -194,5 +196,34 @@ public class ApiVersionServiceImpl implements ApiVersionService {
             list.add(map);
         }
         FileUtil.downloadExcel(list, response);
+    }
+
+    @Override
+    @Transactional
+    public void sync(ApiSyncDto resources) {
+        List<String> apiCodes = resources.getApiCodes();
+        String fromEnv = resources.getFromEnv();
+        String toEnv = resources.getToEnv();
+        if (CollectionUtils.isEmpty(apiCodes) || StringUtils.isBlank(fromEnv) || StringUtils.isBlank(toEnv)) {
+            throw new RuntimeException("Parameter can not be null");
+        }
+        if (fromEnv.equals(toEnv)) {
+            throw new RuntimeException("env must differ");
+        }
+
+        apiCodes.forEach(i -> {
+            ApiVersion fromApi = apiVersionRepository.findByApiCodeAndEnv(i, fromEnv);
+            if (fromApi == null) {
+                throw new RuntimeException("from api not exists");
+            }
+            ApiVersion toApi = new ApiVersion();
+            toApi.setApiCode(i);
+            toApi.setEnv(toEnv);
+            apiVersionRepository.delete(toApi);
+            toApi.copy(fromApi);
+            toApi.setId(null);
+            toApi.setEnv(toEnv);
+            apiVersionRepository.save(toApi);
+        });
     }
 }

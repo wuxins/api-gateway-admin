@@ -28,6 +28,7 @@ import java.io.Serializable;
 
 /**
  * @author yicai.liu
+ *
  * @description /
  * @date 2023-02-25
  **/
@@ -121,7 +122,7 @@ public class ApiVersion implements Serializable {
     private String isDeleted;
 
     @Transient
-    @ApiModelProperty(value = "api name")
+    @ApiModelProperty(value = "api group name")
     private String name;
 
     @Transient

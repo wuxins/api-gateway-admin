@@ -47,6 +47,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>io.github.yedaxia</groupId>
+            <artifactId>japidocs</artifactId>
+            <version>1.4.4</version>
+        </dependency>
         <!--工具包-->
         <dependency>
             <groupId>cn.hutool</groupId>

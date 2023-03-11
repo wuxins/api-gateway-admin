@@ -24,6 +24,7 @@ import java.io.Serializable;
 
 /**
  * @author yicai.liu
+ *
  * @description /
  * @date 2023-02-25
  **/
@@ -138,5 +139,4 @@ public class ApiVersionDto implements Serializable {
     private String envName;
     private String serviceName;
     private String serviceAddress;
-
 }

@@ -18,18 +18,20 @@ package com.zhongan.life.modules.gateway.rest;
 
 import com.zhongan.life.modules.gateway.domain.ApiVersion;
 import com.zhongan.life.modules.gateway.service.ApiVersionService;
+import com.zhongan.life.modules.gateway.service.dto.ApiSyncDto;
 import com.zhongan.life.modules.gateway.service.dto.ApiVersionQueryCriteria;
-import org.springframework.data.domain.Pageable;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import io.swagger.annotations.*;
 
-import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * @author yicai.liu
@@ -76,6 +78,14 @@ public class ApiVersionController {
     @PreAuthorize("@el.check('apiVersion:edit')")
     public ResponseEntity<Object> updateApiVersion(@Validated @RequestBody ApiVersion resources) {
         apiVersionService.update(resources);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @PostMapping("/sync")
+    @ApiOperation("同步API")
+    @PreAuthorize("@el.check('apiVersion:sync')")
+    public ResponseEntity<Object> syncApiVersion(@Validated @RequestBody ApiSyncDto resources) {
+        apiVersionService.sync(resources);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 

@@ -21,6 +21,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 /**
  * @author yicai.liu
+ *
  * @date 2023-02-25
  **/
 public interface ApiRepository extends JpaRepository<Api, Long>, JpaSpecificationExecutor<Api> {

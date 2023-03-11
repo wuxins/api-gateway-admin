@@ -16,8 +16,10 @@
 package com.zhongan.life.modules.gateway.service.impl;
 
 import com.zhongan.life.exception.EntityExistException;
+import com.zhongan.life.modules.gateway.domain.Environment;
 import com.zhongan.life.modules.gateway.domain.UpstreamService;
 import com.zhongan.life.modules.gateway.domain.UpstreamServiceVersion;
+import com.zhongan.life.modules.gateway.repository.EnvironmentRepository;
 import com.zhongan.life.modules.gateway.repository.UpstreamServiceRepository;
 import com.zhongan.life.modules.gateway.repository.UpstreamServiceVersionRepository;
 import com.zhongan.life.modules.gateway.service.UpstreamServiceService;
@@ -33,6 +35,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -40,6 +43,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * @author yicai.liu
@@ -53,13 +57,31 @@ public class UpstreamServiceServiceImpl implements UpstreamServiceService {
     private final UpstreamServiceRepository upstreamServiceRepository;
     private final UpstreamServiceMapper upstreamServiceMapper;
 
+    private final EnvironmentRepository environmentRepository;
+
     private final UpstreamServiceVersionRepository upstreamServiceVersionRepository;
 
     @Override
     public Map<String, Object> queryAll(UpstreamServiceQueryCriteria criteria, Pageable pageable) {
         Page<UpstreamService> page = upstreamServiceRepository.findAll((root, criteriaQuery, criteriaBuilder) -> QueryHelp.getPredicate(root, criteria, criteriaBuilder), pageable);
         List<UpstreamService> upstreamServiceList = page.getContent();
-        upstreamServiceList.forEach(i -> i.setUpstreamServiceVersions(upstreamServiceVersionRepository.findByServiceCode(i.getServiceCode())));
+        List<Environment> environments = environmentRepository.findAll();
+        upstreamServiceList.forEach(i -> {
+            List<UpstreamServiceVersion> upstreamServiceVersions = upstreamServiceVersionRepository.findByServiceCode(i.getServiceCode());
+            Map<String, UpstreamServiceVersion> envWithService = upstreamServiceVersions.stream().collect(Collectors.toMap(UpstreamServiceVersion::getEnv, v -> v));
+            upstreamServiceVersions = new ArrayList<>(environments.size());
+            for (Environment environment : environments) {
+                UpstreamServiceVersion item = new UpstreamServiceVersion();
+                item.setServiceCode(i.getServiceCode());
+                item.setEnv(environment.getEnv());
+                if (envWithService.containsKey(environment.getEnv())) {
+                    item = envWithService.get(environment.getEnv());
+                }
+                upstreamServiceVersions.add(item);
+            }
+            i.setUpstreamServiceVersions(upstreamServiceVersions);
+        });
+
         return PageUtil.toPage(page.map(upstreamServiceMapper::toDto));
     }
 
@@ -102,6 +124,19 @@ public class UpstreamServiceServiceImpl implements UpstreamServiceService {
         }
         upstreamService.copy(resources);
         upstreamServiceRepository.save(upstreamService);
+
+        List<UpstreamServiceVersion> upstreamServiceVersions = resources.getUpstreamServiceVersions();
+        if (CollectionUtils.isEmpty(upstreamServiceVersions)) {
+            return;
+        }
+        for (UpstreamServiceVersion upstreamServiceVersion : upstreamServiceVersions) {
+            if (upstreamServiceVersion.getId() == null) {
+                upstreamServiceVersionRepository.save(upstreamServiceVersion);
+            }
+            UpstreamServiceVersion upstreamServiceVersionUpdate = upstreamServiceVersionRepository.findById(upstreamServiceVersion.getId()).orElseGet(UpstreamServiceVersion::new);
+            upstreamServiceVersionUpdate.copy(upstreamServiceVersion);
+            upstreamServiceVersionRepository.save(upstreamServiceVersionUpdate);
+        }
     }
 
     @Override

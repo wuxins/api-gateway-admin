@@ -29,10 +29,10 @@ public interface UpstreamServiceVersionRepository extends JpaRepository<Upstream
     /**
      * 根据 ServiceCode 查询
      *
-     * @param service_code /
+     * @param serviceCode /
      * @return /
      */
-    List<UpstreamServiceVersion> findByServiceCode(String service_code);
+    List<UpstreamServiceVersion> findByServiceCode(String serviceCode);
 
-    UpstreamServiceVersion findByServiceCodeAndEnv(String service_code, String env);
+    UpstreamServiceVersion findByServiceCodeAndEnv(String serviceCode, String env);
 }
